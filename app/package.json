@@ -1,0 +1,10 @@
+{
+  "name": "akamai-http-lab",
+  "version": "1.0.0",
+  "description": "HTTP Lab for Docker, Kubernetes and Ansible",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "license": "MIT"
+}

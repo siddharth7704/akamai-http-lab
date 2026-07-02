@@ -1,0 +1,4 @@
+---
+- name: K3s role
+  debug:
+    msg: "K3s installation will be added here."

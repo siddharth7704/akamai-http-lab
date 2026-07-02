@@ -1,0 +1,39 @@
+---
+- name: Install DNF plugin
+  dnf:
+    name: dnf-plugins-core
+    state: present
+
+- name: Add Docker CE repository
+  command: >
+    dnf config-manager
+    --add-repo
+    {{ docker_repo }}
+  args:
+    creates: /etc/yum.repos.d/docker-ce.repo
+
+- name: Install Docker packages
+  dnf:
+    name: "{{ docker_packages }}"
+    state: present
+
+- name: Enable Docker
+  service:
+    name: docker
+    enabled: true
+    state: started
+
+- name: Add user to docker group
+  user:
+    name: "{{ docker_user }}"
+    groups: docker
+    append: true
+
+- name: Verify Docker
+  command: docker version
+  register: docker_version
+  changed_when: false
+
+- name: Show Docker Version
+  debug:
+    var: docker_version.stdout_lines

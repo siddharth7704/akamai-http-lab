@@ -1,0 +1,29 @@
+---
+- name: Display Operating System
+  debug:
+    msg: "{{ ansible_facts['distribution'] }} {{ ansible_facts['distribution_version'] }}"
+
+- name: Display Kernel
+  debug:
+    msg: "{{ ansible_facts['kernel'] }}"
+
+- name: Display CPU Count
+  debug:
+    msg: "{{ ansible_facts['processor_vcpus'] }}"
+
+- name: Display Memory
+  debug:
+    msg: "{{ ansible_facts['memtotal_mb'] }} MB"
+
+- name: Display IP Address
+  debug:
+    msg: "{{ ansible_facts['default_ipv4']['address'] }}"
+
+- name: Display Disk Usage
+  command: df -h /
+  register: disk_usage
+  changed_when: false
+
+- name: Show Disk Usage
+  debug:
+    var: disk_usage.stdout_lines

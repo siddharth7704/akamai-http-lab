@@ -1,0 +1,17 @@
+---
+docker_packages:
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io
+  - docker-buildx-plugin
+  - docker-compose-plugin
+
+docker_repo: https://download.docker.com/linux/rocky/docker-ce.repo
+
+docker_user: siddharth
+
+app_name: akamai-http-lab
+
+container_name: http-lab
+
+app_port: 3000

@@ -1,0 +1,4 @@
+---
+- name: Application role
+  debug:
+    msg: "Application deployment will be added here."

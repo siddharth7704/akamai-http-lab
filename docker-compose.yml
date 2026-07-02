@@ -1,0 +1,17 @@
+services:
+
+  http-lab:
+
+    build: .
+
+    container_name: http-lab
+
+    ports:
+      - "3000:3000"
+
+    volumes:
+      - ./downloads:/app/downloads
+      - ./public:/app/public
+      - ./data:/app/data
+
+    restart: unless-stopped

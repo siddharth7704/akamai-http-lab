@@ -1,0 +1,33 @@
+# macOS
+.DS_Store
+
+# Node
+node_modules/
+
+# Logs
+*.log
+
+# Environment
+.env
+
+# Ansible Vault Password File
+.vault_pass
+
+# Python
+__pycache__/
+
+# Kubernetes
+*.swp
+
+# IDE
+.vscode/
+.idea/
+
+# Temporary
+*.retry
+
+# Docker
+**/.dockerignore
+
+# Build
+dist/

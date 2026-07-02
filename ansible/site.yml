@@ -1,0 +1,11 @@
+---
+- name: Prepare HTTP Lab Server
+  hosts: lab
+  become: true
+
+  roles:
+    - common
+    - docker
+    - k3s
+    - app
+    - nginx

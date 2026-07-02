@@ -1,0 +1,4 @@
+---
+- name: NGINX role
+  debug:
+    msg: "NGINX configuration will be added here."
