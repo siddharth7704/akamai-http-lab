@@ -11,6 +11,7 @@ node_modules/
 .env
 
 # Ansible Vault Password File
+ansible/vault.yml
 .vault_pass
 
 # Python
